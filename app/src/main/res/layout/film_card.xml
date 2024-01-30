@@ -1,6 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/image_layout">
+
+
+        <ImageView
+            android:id="@+id/film_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/film_extra_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/film_image">
+
+            <TextView
+                android:id="@+id/film_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="genre"
+                android:textColor="@color/text_tertiary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/film_origin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="country, year"
+                android:textColor="@color/text_tertiary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/film_genre" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/film_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textColor="@color/text_primary"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_layout" />
+
+    <TextView
+        android:id="@+id/film_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="subtitle"
+        android:textColor="@color/text_tertiary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/film_title" />
+
+    <TextView
+        android:id="@+id/film_rating_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rating"
+        android:textColor="@color/text_tertiary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/film_subtitle" />
+
+    <Button
+        android:id="@+id/info_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Подробнее"
+        android:textAllCaps="false"
+        android:textColor="@color/design_default_color_on_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
