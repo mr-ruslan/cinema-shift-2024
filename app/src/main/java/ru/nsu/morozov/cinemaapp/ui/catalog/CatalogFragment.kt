@@ -34,7 +34,7 @@ class CatalogFragment : Fragment() {
 
     private val adapter = CatalogAdapter(
         onMore = { film ->
-            var bundle = FilmFragmentArgs.Builder(film.id).build().toBundle()
+            val bundle = FilmFragmentArgs.Builder(film.id).build().toBundle()
             findNavController().navigate(R.id.navigation_film, bundle)
         }
     )

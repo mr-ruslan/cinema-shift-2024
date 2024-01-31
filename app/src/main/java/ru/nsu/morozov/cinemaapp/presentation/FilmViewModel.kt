@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import ru.nsu.morozov.cinemaapp.domain.usecase.GetFilmInfoUseCase
-import ru.nsu.morozov.cinemaapp.domain.usecase.GetTodayFilmsUseCase
 
 class FilmViewModel(private val getFilmInfoUseCase: GetFilmInfoUseCase) : ViewModel() {
 
