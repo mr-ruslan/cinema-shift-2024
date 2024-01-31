@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import ru.nsu.morozov.cinemaapp.databinding.FilmCardBinding
 import ru.nsu.morozov.cinemaapp.domain.entity.Film
 
@@ -23,6 +24,10 @@ class CatalogAdapter(
             binding.infoButton.setOnClickListener {
                 onMore(film)
             }
+            Glide.with(binding.filmImage.context)
+                .load("https://shift-backend.onrender.com"+film.image)
+                //.apply(RequestOptions().placeholder(R.drawable.placeholder_image))
+                .into(binding.filmImage)
         }
     }
 
