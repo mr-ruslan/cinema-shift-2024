@@ -9,6 +9,20 @@
         android:id="@+id/navigation_catalog"
         android:name="ru.nsu.morozov.cinemaapp.ui.catalog.CatalogFragment"
         android:label="@string/title_catalog"
-        tools:layout="@layout/catalog_fragment" />
+        tools:layout="@layout/catalog_fragment" >
+        <action
+            android:id="@+id/action_navigation_catalog_to_filmFragment"
+            app:destination="@id/navigation_film"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_film"
+        android:name="ru.nsu.morozov.cinemaapp.ui.catalog.FilmFragment"
+        android:label=""
+        tools:layout="@layout/film_fragment">
+        <argument
+            android:name="film_id"
+            app:argType="long"/>
+    </fragment>
 
 </navigation>
