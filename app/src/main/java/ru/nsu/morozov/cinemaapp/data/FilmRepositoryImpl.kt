@@ -42,4 +42,9 @@ class FilmRepositoryImpl : FilmRepository {
     override suspend fun getToday(): List<Film> =
         filmApi.getToday().films.map { converter.convert(it) }
 
+    override suspend fun getFilmInfo(filmId: Long): Film {
+        return filmApi.getFilm(filmId).film.let {
+            converter.convert(it) }
+    }
+
 }

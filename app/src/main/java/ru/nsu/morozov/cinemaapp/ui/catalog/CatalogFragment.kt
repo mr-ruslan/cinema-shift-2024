@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import ru.nsu.morozov.cinemaapp.R
 import ru.nsu.morozov.cinemaapp.databinding.CatalogFragmentBinding
 import ru.nsu.morozov.cinemaapp.domain.entity.Film
 import ru.nsu.morozov.cinemaapp.presentation.AppViewModelProvider
@@ -32,7 +34,8 @@ class CatalogFragment : Fragment() {
 
     private val adapter = CatalogAdapter(
         onMore = { film ->
-            Toast.makeText(context, film.name, Toast.LENGTH_SHORT).show()
+            var bundle = FilmFragmentArgs.Builder(film.id).build().toBundle()
+            findNavController().navigate(R.id.navigation_film, bundle)
         }
     )
 
@@ -56,7 +59,7 @@ class CatalogFragment : Fragment() {
 
     private fun showProgress() {
         with(binding) {
-            Toast.makeText(context, "Loading today films", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context, "Loading today films", Toast.LENGTH_SHORT).show()
         }
     }
 

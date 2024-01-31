@@ -1,6 +1,5 @@
 package ru.nsu.morozov.cinemaapp.domain.entity
 
-import java.time.LocalDateTime
 
 data class Film(
     val id: Long,

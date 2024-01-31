@@ -4,4 +4,5 @@ import ru.nsu.morozov.cinemaapp.domain.entity.Film
 
 interface FilmRepository {
     suspend fun getToday(): List<Film>
+    suspend fun getFilmInfo(filmId: Long): Film
 }

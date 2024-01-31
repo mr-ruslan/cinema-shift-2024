@@ -28,6 +28,7 @@ class CatalogAdapter(
                 .load("https://shift-backend.onrender.com"+film.image)
                 //.apply(RequestOptions().placeholder(R.drawable.placeholder_image))
                 .into(binding.filmImage)
+            // TODO fill other fields with the data
         }
     }
 
