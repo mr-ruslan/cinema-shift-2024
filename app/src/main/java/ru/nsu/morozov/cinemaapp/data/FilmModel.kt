@@ -6,6 +6,7 @@ data class FilmModel(
 
     val id: Long,
     val name: String,
+    val originalName: String,
     val description: String,
     val releaseDate: String,
     val genres: List<String>,

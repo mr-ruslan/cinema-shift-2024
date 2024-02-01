@@ -8,6 +8,7 @@ class FilmConverter {
             Film(
                 id = id,
                 name = name,
+                originalName = originalName,
                 description = description,
                 releaseDate = releaseDate,
                 genres = genres,
