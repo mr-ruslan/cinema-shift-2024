@@ -14,7 +14,7 @@ data class FilmModel(
     val rating: Map<String, String>,
     @SerializedName("img")
     val image: String,
-    //val country: String,
+    val country: FilmCountryModel,
     val runtime: Long,
     val ageRating: String,
 )

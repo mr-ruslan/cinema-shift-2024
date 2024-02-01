@@ -27,7 +27,7 @@ class CatalogAdapter(
                 filmTitle.text = film.name
                 filmSubtitle.text = film.originalName
                 filmGenre.text = film.genres.joinToString(", ")
-                filmOrigin.text = "США"
+                filmOrigin.text = film.country
                 filmRatingValue.text =
                     film.rating.map { "${it.key} - ${it.value}" }.joinToString("\n")
                 binding.infoButton.setOnClickListener {

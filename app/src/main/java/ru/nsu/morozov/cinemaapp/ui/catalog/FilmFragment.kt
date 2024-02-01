@@ -64,7 +64,7 @@ class FilmFragment : Fragment() {
             filmTitle.text = film.name
             filmSubtitle.text = film.description
             filmGenre.text = film.genres.joinToString(", ")
-            filmOrigin.text = "США"
+            filmOrigin.text = film.country
             filmRatingValue.text = film.rating.map { "${it.key} - ${it.value}" }.joinToString("\n")
             infoButton.setOnClickListener {
                 Toast.makeText(context, "Not implemented", Toast.LENGTH_SHORT).show()

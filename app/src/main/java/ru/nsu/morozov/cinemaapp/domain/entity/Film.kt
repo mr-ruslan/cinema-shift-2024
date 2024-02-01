@@ -10,7 +10,7 @@ data class Film(
     val genres: List<String>,
     val rating: Map<String, String>,
     val image: String,
-    //val country: String,
+    val country: String,
     val runtime: Long,
     val ageRating: String,
 )

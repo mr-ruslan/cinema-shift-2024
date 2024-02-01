@@ -14,7 +14,7 @@ class FilmConverter {
                 genres = genres,
                 rating = rating,
                 image = image,
-                //country = country,
+                country = country.name,
                 runtime = runtime,
                 ageRating = ageRating,
             )
