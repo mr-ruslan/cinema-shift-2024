@@ -17,18 +17,23 @@ class CatalogAdapter(
         private val binding: FilmCardBinding,
         private val onMore: (Film) -> Unit,
     ) : RecyclerView.ViewHolder(binding.root) {
-        private val titleView = binding.filmTitle
 
         fun bind(film: Film) {
-            titleView.text = film.name
-            binding.infoButton.setOnClickListener {
-                onMore(film)
+            with(binding) {
+                filmTitle.text = film.name
+                filmSubtitle.text = film.originalName
+                filmGenre.text = film.genres.joinToString(", ")
+                filmOrigin.text = "США"
+                filmRatingValue.text = film.rating.map{"${it.key} - ${it.value}"}.joinToString("\n")
+                binding.infoButton.setOnClickListener {
+                    onMore(film)
+                }
+                Glide.with(binding.filmImage.context)
+                    .load("https://shift-backend.onrender.com" + film.image)
+                    //.apply(RequestOptions().placeholder(R.drawable.placeholder_image))
+                    .into(binding.filmImage)
+                // TODO fill other fields with the data
             }
-            Glide.with(binding.filmImage.context)
-                .load("https://shift-backend.onrender.com"+film.image)
-                //.apply(RequestOptions().placeholder(R.drawable.placeholder_image))
-                .into(binding.filmImage)
-            // TODO fill other fields with the data
         }
     }
 
