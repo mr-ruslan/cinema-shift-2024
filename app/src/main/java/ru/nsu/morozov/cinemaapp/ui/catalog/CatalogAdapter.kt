@@ -1,11 +1,15 @@
 package ru.nsu.morozov.cinemaapp.ui.catalog
 
+import android.content.res.Resources
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import ru.nsu.morozov.cinemaapp.databinding.FilmCardBinding
 import ru.nsu.morozov.cinemaapp.domain.entity.Film
 
@@ -24,13 +28,25 @@ class CatalogAdapter(
                 filmSubtitle.text = film.originalName
                 filmGenre.text = film.genres.joinToString(", ")
                 filmOrigin.text = "США"
-                filmRatingValue.text = film.rating.map{"${it.key} - ${it.value}"}.joinToString("\n")
+                filmRatingValue.text =
+                    film.rating.map { "${it.key} - ${it.value}" }.joinToString("\n")
                 binding.infoButton.setOnClickListener {
                     onMore(film)
                 }
                 Glide.with(binding.filmImage.context)
                     .load("https://shift-backend.onrender.com" + film.image)
                     //.apply(RequestOptions().placeholder(R.drawable.placeholder_image))
+                    .apply(
+                        RequestOptions.bitmapTransform(
+                            RoundedCorners(
+                                TypedValue.applyDimension(
+                                    TypedValue.COMPLEX_UNIT_DIP,
+                                    12f,
+                                    Resources.getSystem().displayMetrics
+                                ).toInt()
+                            )
+                        )
+                    )
                     .into(binding.filmImage)
                 // TODO fill other fields with the data
             }
