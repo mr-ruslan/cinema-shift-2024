@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="genre"
-                android:textColor="@color/text_tertiary"
+                style="@style/SubTitleTextBold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="country, year"
-                android:textColor="@color/text_tertiary"
+                style="@style/SubTitleText"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -64,8 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Title"
-        android:textColor="@color/text_primary"
-        android:textStyle="bold"
+        android:paddingVertical="10dp"
+        style="@style/TitleText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_layout" />
 
@@ -74,7 +74,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="subtitle"
-        android:textColor="@color/text_tertiary"
+        style="@style/SubTitleText"
+        android:paddingVertical="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/film_title" />
 
@@ -83,7 +84,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="rating"
-        android:textColor="@color/text_tertiary"
+        android:paddingVertical="5dp"
+        style="@style/ExtraText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/film_subtitle" />
 
@@ -95,6 +97,7 @@
         android:textAllCaps="false"
         android:textColor="@color/design_default_color_on_primary"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/film_rating_value"/>
+        app:layout_constraintTop_toBottomOf="@+id/film_rating_value"
+        android:background="@drawable/button_rounded"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
