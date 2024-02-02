@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import ru.nsu.morozov.cinemaapp.R
 import ru.nsu.morozov.cinemaapp.databinding.FilmFragmentBinding
 import ru.nsu.morozov.cinemaapp.domain.entity.Film
 import ru.nsu.morozov.cinemaapp.presentation.AppViewModelProvider
@@ -72,7 +73,8 @@ class FilmFragment : Fragment() {
             }
             Glide.with(filmImage.context)
                 .load("https://shift-backend.onrender.com" + film.image)
-                //.apply(RequestOptions().placeholder(R.drawable.placeholder_image))
+                .placeholder(R.drawable.loading_placeholder)
+                .error(R.drawable.loading_placeholder)
                 .apply(
                     RequestOptions().transform(
                         CenterCrop(),

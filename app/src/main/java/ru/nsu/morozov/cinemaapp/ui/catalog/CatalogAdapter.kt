@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import ru.nsu.morozov.cinemaapp.R
 import ru.nsu.morozov.cinemaapp.databinding.FilmCardBinding
 import ru.nsu.morozov.cinemaapp.domain.entity.Film
 
@@ -36,7 +37,8 @@ class CatalogAdapter(
                 }
                 Glide.with(binding.filmImage.context)
                     .load("https://shift-backend.onrender.com" + film.image)
-                    //.apply(RequestOptions().placeholder(R.drawable.placeholder_image))
+                    .placeholder(R.drawable.loading_placeholder)
+                    .error(R.drawable.loading_placeholder)
                     .apply(
                         RequestOptions.bitmapTransform(
                             RoundedCorners(
@@ -49,7 +51,6 @@ class CatalogAdapter(
                         )
                     )
                     .into(binding.filmImage)
-                // TODO fill other fields with the data
             }
         }
     }
