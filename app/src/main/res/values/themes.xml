@@ -11,5 +11,6 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="colorSurfaceContainer">@color/white</item>>
         <!-- Customize your theme here. -->
+        <item name="colorAccent">@color/purple</item>
     </style>
 </resources>
